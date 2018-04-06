@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="Script Tutorials" />
+  <title>Bootstrap one-page template with Parallax effect | Script Tutorials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <!-- attach CSS styles -->
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/css/style.css" rel="stylesheet" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  <!-- <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='jquery-1.10.2.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script> -->
+
+</head>
+<body>
+
+  <!-- navigation panel -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Your Brand Name</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse-main">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#information">Information</a></li>
+          <li><a href="#google_map">Contact</a></li>
+          <li><a href="http://www.script-tutorials.com/bootstrap-one-page-template-with-parallax-effect/">Back to tutorial</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!-- first section - Home -->
+  <div id="home" class="home">
+    <div class="text-vcenter">
+      <h1>Tell us about you</h1>
+
+
+    <form method="POST" >
+                    <label for="name">Your name:</label>
+                   <input type="text" id="name" name="name" required="required">
+                     <input type="submit" value="Submit" id="submitbutton">
+                     <a type="submit" href ="{{ url_for('.name', _anchor='about')}}" ></a>
+         </form>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+  <!-- /first section -->
+
+  <!-- second section - About -->
+  <div id="about" class="pad-section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-12 text-center">
+
+        {% if name %}
+        <p>Hello {{name}}!</p>
+        {% else %}
+        <p>Hello {{name}}, where do you want to visit</p>
+        {% endif %}
+
+        $('.noSpace').keyup(function() {
+ this.value = this.value.replace(/\s/g,'');
+});
+
+          <p class="lead">Lorem</p>
+          <input type="text" id="query" placeholder="Where do you want to visit" onkeyup="nospaces(this)">
+          <button id="search">Go</button>
+
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- /second section -->
+
+  <!-- third section - Services -->
+  <div id="services" class="pad-section">
+    <div class="container">
+      <h2 class="text-center">Our Services</h2> <hr />
+      <div class="row text-center">
+      <div id="image" class="col-sm-12 text-center"></div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- /third section -->
+
+  <!-- fourth section - Information -->
+  <div id="information" class="pad-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">Additional information</h2>
+            </div>
+            <div class="panel-body lead">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit adipiscing blandit. Aliquam placerat, velit a fermentum fermentum, mi felis vehicula justo, a dapibus quam augue non massa. Duis euismod, augue et tempus consequat, lorem mauris porttitor quam, consequat ultricies mauris mi a metus. Phasellus congue, leo sed ultricies tristique, nunc libero tempor ligula, at varius mi nibh in nisi. Aliquam erat volutpat. Maecenas rhoncus, neque facilisis rhoncus tempus, elit ligula varius dui, quis amet.
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2 class="panel-title">Additional information</h2>
+            </div>
+            <div class="panel-body lead">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit adipiscing blandit. Aliquam placerat, velit a fermentum fermentum, mi felis vehicula justo, a dapibus quam augue non massa. Duis euismod, augue et tempus consequat, lorem mauris porttitor quam, consequat ultricies mauris mi a metus. Phasellus congue, leo sed ultricies tristique, nunc libero tempor ligula, at varius mi nibh in nisi. Aliquam erat volutpat. Maecenas rhoncus, neque facilisis rhoncus tempus, elit ligula varius dui, quis amet.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /fourth section -->
+
+  <!-- fifth section -->
+  <div id="services" class="pad-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h3>Parallax scrolling effect is in action</h3>
+          <h4>The next is the address on Google maps</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /fifth section -->
+
+  <!-- google map -->
+  <div id="google_map"></div>
+  <!-- /google map -->
+
+  <!-- footer -->
+  <footer>
+    <hr />
+    <div class="container">
+      <p class="text-right">Copyright &copy; Your Company 2014</p>
+    </div>
+  </footer>
+  <!-- /footer -->
+
+
+
+  <!-- attach JavaScripts -->
+  <!-- <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="//maps.google.com/maps/api/js?sensor=true"></script>
+  <script src="js/main.js"></script> -->
+</body>
+</html>
