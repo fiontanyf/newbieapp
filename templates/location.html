@@ -8,10 +8,7 @@
 
   <!-- attach CSS styles -->
   <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../static/css/style.css" rel="stylesheet">
-  <link rel="stylesheet"  type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-
-
+  <link href="../static/css/style.css" rel="stylesheet" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
@@ -36,35 +33,57 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <!-- first section - Home -->
+
+
+
+
+
+  <!-- location search -->
   <div id="home" class="home">
       <div class="text-vcenter">
-      <!-- things to do-->
 
-      <h1>Discover great things to do</h1>
+
+      <!-- thing to do start-->
+      <h1>Discover new places</h1>
       <div class="container">
-    <ul class="progressbar">
-      <li class="active">Step 1</li>
-      <li>Step 2</li>
-      <li>Step 3</li>
-    </ul>
-  </div>
+        <ul class="progressbar">
+          <li >Step 1</li>
+          <li class="active">Step 2</li>
+          <li>Step 3</li>
+        </ul>
+      </div>
       <!-- things to do end-->
 
+      <div>
+        {% if name %}
+        <p>Hello {{name}}!, where do you want to visit</p>
+        {% else %}
+        <p>Hello {{name}}, where do you want to visit</p>
+        {% endif %}
 
-      <h2>First of all tell us about you</h2>
 
-        <form method="post" action="/location">
 
-                    <label for="name">Your name:</label>
-                   <input type="text" id="name" name="name" required="required">
-                   <input type="submit" value="Submit" id="submitbutton">
 
-      </form>
+        <p class="lead">Lorem</p>
+        <input type="text" id="query" placeholder="Type a country or city--" onkeyup="nospaces(this)">
+        <button id="search">Go</button>
 
-    </div>
-  </div>
-  <!-- /first section -->
+      </div>
+
+
+      <div id="image">
+        <img src="../static/london.jpeg">
+
+      </div>
+      </div>
+      </div>
+
+
+
+
+  <!-- /location end -->
+
+
 
 
 
