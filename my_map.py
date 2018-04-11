@@ -12,32 +12,33 @@ def retreive():
     return render_template('homepage.html')
 
 @app.route("/sendRequest/<string:query>")
+
 def results(query):
-	search_payload = {"key":key, "query":query}
-	search_req = requests.get(search_url, params=search_payload)
-	search_json = search_req.json()
+    strip_query = query.replace(" ", "")
+    search_payload = {"key":key, "query":strip_query}
+    search_req = requests.get(search_url, params=search_payload)
+    search_json = search_req.json()
 
-	photo_id = search_json["results"][0]["photos"][0]["photo_reference"]
+    photo_id = search_json["results"][0]["photos"][0]["photo_reference"]
 
-	photo_payload = {"key" : key, "maxwidth" : 500, "maxwidth" : 500, "photoreference" : photo_id}
-	photo_request = requests.get(photos_url, params=photo_payload)
+    photo_payload = {"key" : key, "maxwidth" : 500, "maxwidth" : 500, "photoreference" : photo_id}
+    photo_request = requests.get(photos_url, params=photo_payload)
 
-	photo_type = imghdr.what("", photo_request.content)
-	photo_name = "static/" + query + "." + photo_type
+    photo_type = imghdr.what("", photo_request.content)
+    photo_name = "static/" + strip_query + "." + photo_type
 
-	with open(photo_name, "wb") as photo:
-		photo.write(photo_request.content)
+    with open(photo_name, "wb") as photo:
+        photo.write(photo_request.content)
 
-	return '<img src='+ photo_name + '>'
+    return '<img src='+ photo_name + '>'
 
 
 # greeting message
 @app.route("/location" , methods=["POST"])
 def name():
-    return render_template('location.html' )
     form_data = request.form
     name = form_data["name"]
-    print name
+    return render_template('location.html', name=name )
 
 
 if __name__ ==  "__main__":
