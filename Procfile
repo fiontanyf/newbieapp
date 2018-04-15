@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi
+web: python my_map.py $PORT
