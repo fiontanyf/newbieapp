@@ -9,6 +9,7 @@
   <!-- attach CSS styles -->
   <link href="../static/css/bootstrap.min.css" rel="stylesheet">
   <link href="../static/css/location.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
@@ -26,9 +27,8 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
 
-        <a class="navbar-brand" href="#">Your Brand Name</a>
       </div>
-
+        <h1> The Events Finder</h1>
 
     </div><!-- /.container-fluid -->
   </nav>
@@ -50,16 +50,16 @@
 
       <div class="container">
         <ul class="progressbar">
-          <li >1 About you </li>
-          <li class="active">2 Your location</li>
-          <li>3 Things to do</li>
+          <li > About you </li>
+          <li class="active"> Your location</li>
+          <li> Things to do</li>
         </ul>
       </div>
       <!-- things to do end-->
 
       <div>
 
-        <p class="lead">Where do you want to visit?</p>
+        <p class="lead">Where are you in the world?</p>
         <input type="text" id="query" placeholder="Type a country or city--" onkeyup="nospaces(this)">
         <button id="search">Go</button>
 
@@ -85,7 +85,7 @@
   <footer>
     <hr />
     <div class="container">
-      <p class="text-right">Copyright &copy; Your Company 2014</p>
+    
     </div>
   </footer>
   <!-- /footer -->

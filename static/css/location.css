@@ -8,7 +8,10 @@ html, body {
 .container-fluid h1 {
   text-align: center;
   padding-bottom: 10px;
+  font-family: Montserrat;
 }
+
+
 
 /* padded section */
 .pad-section {
@@ -24,12 +27,14 @@ html, body {
   text-align: center;
   vertical-align: middle;
   padding-top: 50px;
+  font-family: Montserrat;
 }
 
 .text-vcenter h1 {
   font-size: 4.5em;
   font-weight: 700;
   text-align: center;
+  font-family: Montserrat;
 }
 
 #home {
@@ -42,6 +47,7 @@ html, body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: Montserrat;
 }
 
 #about {
@@ -111,6 +117,7 @@ footer .glyphicon:hover {
   text-align: center;
   cursor: pointer;
   font-size: 18px;
+  font-family: Montserrat;
 }
 .progressbar li:before {
   content: counter(step);
@@ -147,3 +154,18 @@ footer .glyphicon:hover {
 .progressbar li.active + li:after {
   background-color: green;
 }
+
+.img-circle {
+	padding: 10px;
+	margin: 20px;
+}
+
+#search {
+	padding: 5px;
+}
+
+#query {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
