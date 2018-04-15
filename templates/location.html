@@ -34,45 +34,40 @@
   </nav>
 
 
-
-
-
-
   <!-- location search -->
   <div id="home" class="home">
       <div class="text-vcenter">
 
 
       <!-- thing to do start-->
-      <h1>Discover new places</h1>
+
+       {% if name %}
+        <h3>{{name}}, discover new places</h3>
+        {% else %}
+        <h3>Hello, discover new places</h3>
+        {% endif %}
+
+
       <div class="container">
         <ul class="progressbar">
-          <li >Step 1</li>
-          <li class="active">Step 2</li>
-          <li>Step 3</li>
+          <li >1 About you </li>
+          <li class="active">2 Your location</li>
+          <li>3 Things to do</li>
         </ul>
       </div>
       <!-- things to do end-->
 
       <div>
-        {% if name %}
-        <p>Hello {{name}}!, where do you want to visit</p>
-        {% else %}
-        <p>Hello generic, where do you want to visit</p>
-        {% endif %}
 
-
-
-
-        <p class="lead">Lorem</p>
+        <p class="lead">Where do you want to visit?</p>
         <input type="text" id="query" placeholder="Type a country or city--" onkeyup="nospaces(this)">
         <button id="search">Go</button>
 
       </div>
 
 
-      <div id="image">
-        <img src="../static/london.jpeg">
+      <div id="image" class="img-circle">
+        <img  style="width:50%" src="../static/location_default.jpg">
 
       </div>
       </div>
@@ -82,11 +77,6 @@
 
 
   <!-- /location end -->
-
-
-
-
-
 
 
 
