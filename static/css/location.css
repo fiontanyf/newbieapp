@@ -36,8 +36,7 @@ html, body {
   font-weight: 700;
   text-align: center;
   font-family: Montserrat;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 20px;
 }
 
 #home {
