@@ -12,6 +12,12 @@ html, body {
   width: 100%;
 }
 
+/* Navbar */
+.container-fluid h1 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 /* padded section */
 .pad-section {
   padding: 50px 0;
@@ -29,14 +35,12 @@ html, body {
 .text-vcenter h1 {
   font-size: 4.5em;
   font-weight: 700;
-  margin: 0;
-  padding: 30;
   text-align: center;
 }
 
 /* additional sections */
 #home {
-  background: url(../images/estate.jpg) no-repeat center center fixed;
+  background: url(../images/estate2.jpg) no-repeat center center fixed;
   display: table;
   height: 100%;
   position: relative;
@@ -104,14 +108,16 @@ footer .glyphicon:hover {
 
 .progressbar {
   counter-reset: step;
+  margin: 10px;
 }
 .progressbar li {
   list-style: none;
   display: inline-block;
-  width: 35%;
+  width: 30%;
   position: relative;
   text-align: center;
   cursor: pointer;
+  font-size: 18px;
 }
 .progressbar li:before {
   content: counter(step);
