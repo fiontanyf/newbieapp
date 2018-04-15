@@ -20,6 +20,11 @@ html, body {
   width: 100%;
 }
 
+/* .upper {
+  text-transform: capitalize;
+} */
+
+
 /* vertical-centered text */
 .text-vcenter {
   display: table-cell;
