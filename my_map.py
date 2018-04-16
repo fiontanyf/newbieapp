@@ -56,7 +56,6 @@ def retreive():
     return render_template('homepage.html')
 
 @app.route("/sendRequest/<string:query>")
-
 def results(query):
     strip_query = query.replace(" ", "")
     search_payload = {"key":key, "query":strip_query}
@@ -74,6 +73,9 @@ def results(query):
     with open(photo_name, "wb") as photo:
         photo.write(photo_request.content)
 
+    event_data = get_events(query)
+    print event_data
+
     return '<img src='+ photo_name + '>'
 
 
@@ -81,8 +83,26 @@ def results(query):
 @app.route("/location" , methods=["POST"])
 def name():
     form_data = request.form
+    print "HELLO"
     name = form_data["name"]
     return render_template('location.html', name=name )
+
+def get_events(query):
+    print "get_events"
+    url = "https://www.eventbriteapi.com/v3/events/search/?location.address=London&token=7RTCZQ5UEAXLM5BVO6JX"
+
+    response = requests.get(url) #, params=payload)
+    data = response.json()
+
+    print response.url
+    print response.status_code
+    print response.headers["content-type"]
+    print response.text
+
+    return "I'm an event :)"
+
+
+
 
 
 if __name__ ==  "__main__":
