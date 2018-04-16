@@ -11,6 +11,11 @@ html, body {
   font-family: Montserrat;
 }
 
+.container-fluid a {
+	text-decoration: none;
+	color: black;
+}
+
 
 
 /* padded section */
