@@ -42,7 +42,7 @@
       <div class="text-vcenter">
 
         <!-- things to do-->
-        <h1>Discover great things to do in your city!</h1>
+        <h1>What's the weather like now in your city?</h1>
           <div class="container">
             <ul class="progressbar">
               <li>Your name</li>
@@ -52,9 +52,9 @@
 
 
        {% if name %}
-        <h2> <p>"Hi there! you searched for the weather in {{name}}. </p>
+        <h2> <p>Hi there! you searched for the weather in <strong>{{name}}</strong> </p>
 
-              <p>It's currently {{temperature}}&deg;C outside, and there are {{weather}}"</p></h2>
+              <p>It's currently {{temperature}}&deg;C outside, and there are {{weather}}</p></h2>
         {% else %}
         <h1>Hello, discover new places</h1>
         {% endif %}
