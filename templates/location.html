@@ -41,10 +41,12 @@
 
       <!-- thing to do start-->
 
+
+
        {% if name %}
         <h1>{{name}}, discover new places</h1>
         {% else %}
-        <h1>Hello, discover new places</h1>
+        <h1>nothing to show</h1>
         {% endif %}
 
 
@@ -57,12 +59,16 @@
       </div>
       <!-- things to do end-->
 
-      <div>
 
+<!-- FORM TO GO TO WEATHER-->
+      <div>
+        <form method="post" action="/weather">
         <p class="lead">Where are you in the world?</p>
         <input type="text" id="query" placeholder="Type a country or city--" onkeyup="nospaces(this)">
-        <button id="search">Go</button>
+         <input type="submit" value="Submit" id="submitbutton">
 
+
+        </form>
       </div>
 
 

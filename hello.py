@@ -1,21 +1,14 @@
 from flask import Flask, render_template, request
-import requests
 
 app=Flask("MyApp") # defining a flas application with the name my app
 
 @app.route("/events") #decorator- very powerful in python ,  #when user calls e.g. bbc.co.uk/
 def eventslist():
-	
-	return render_template("eventstext.html")
+	return " events page!"
+	return render_template("eventstext.html", name=name.title())
 
-#now for the events info
 
-#@app.route("/<name>")
-#def hello_someone(name):
-#return render_template("hello.html", name=name.title())
-
-#@app.route('/')
-#def index():
+import requests
 
 url = "https://www.eventbriteapi.com/v3/events/search/?sort_by=distance&location.address=London&location.within=1mi&token=NSPHS3E5DNMF4YU4BCW4"
 
@@ -27,8 +20,6 @@ print (response.url)
 print (response.status_code)
 print (response.headers["content-type"])
 print (response.text)
-
-
 
 #test
 # key 
