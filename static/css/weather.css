@@ -174,3 +174,10 @@ footer .glyphicon:hover {
 	padding-left: 15px;
 }
 
+.container h2 {
+  font-family: Montserrat;
+}
+
+.container p {
+  font-family: Montserrat;
+}
