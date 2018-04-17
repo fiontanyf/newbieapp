@@ -181,3 +181,8 @@ footer .glyphicon:hover {
 .container p {
   font-family: Montserrat;
 }
+
+.container a {
+  text-decoration: none;
+  color: inherit;
+}

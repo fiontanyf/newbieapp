@@ -60,6 +60,11 @@ html, body {
 #about {
 }
 
+.container a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #services {
   background-color: #306d9f;
   color: #ffffff;
