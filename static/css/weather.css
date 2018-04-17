@@ -12,11 +12,9 @@ html, body {
 }
 
 .container-fluid a {
-	text-decoration: none;
-	color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
-
-
 
 /* padded section */
 .pad-section {
