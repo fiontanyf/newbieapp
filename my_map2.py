@@ -11,7 +11,7 @@ port = int(os.environ.get("PORT", 5000))
 search_url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
 photos_url = "https://maps.googleapis.com/maps/api/place/photo"
 
-# HIDE KEY 
+# HIDE KEY
 # config_file = 'config.json'
 # # The check below is to see if you have the
 # # config file defined and if you do not, it will display
@@ -56,6 +56,7 @@ def retreive():
     return render_template('homepage.html')
 
 @app.route("/sendRequest/<string:query>")
+
 def results(query):
     strip_query = query.replace(" ", "")
     search_payload = {"key":key, "query":strip_query}
@@ -73,21 +74,59 @@ def results(query):
     with open(photo_name, "wb") as photo:
         photo.write(photo_request.content)
 
-    event_data = get_events(query)
-    print event_data
+    # event_data = get_events(query)
+    # print event_data
 
     return '<img src='+ photo_name + '>'
 
 
-# greeting message
+# greeting message section
 @app.route("/location" , methods=["POST"])
 def name():
     form_data = request.form
-    print "HELLO"
     name = form_data["name"]
-    return render_template('location.html', name=name )
+    return render_template('location.html', name=name, )
 
 
+
+
+# weather section
+@app.route("/weather" , methods=["POST"])
+def move():
+    form_data = request.form
+    endpoint = "http://api.openweathermap.org/data/2.5/weather"
+    payload = {"q": "London,UK", "units":"metric", "appid":"7c342186dbca07aef649cd07af2b77f1"}
+
+    response = requests.get(endpoint, params=payload)
+    data = response.json()
+
+    print response.url
+    print response.status_code
+    print response.headers["content-type"]
+    print response.text
+
+
+    temperature = data["main"]["temp"]
+    name = data["name"]
+    weather = data["weather"][0]["main"]
+
+    return render_template('weather.html', name=name,  temperature=temperature, weather=weather, )
+
+
+#when we put a /X in our url, we get hello X displayed on the page. that X is stored as a
+#variable called name.
+# now for ANYTHING other than london it return's the below
+#@app.route("/profile/<name>")
+#def profile(name):
+    #r
+
+
+    #render_template("chocs.html", city=chocs.title())#this will give back the name entered capitalised
+
+#if the search for localhost5000/ANYTHING(hence the other)
+@app.route('/<badpage>')
+def bad(badpage):
+    return "<h2>Hey there it looks like you searched for the wrong thing</h2>"
 
 
 
