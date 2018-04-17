@@ -74,8 +74,7 @@ def results(query):
     with open(photo_name, "wb") as photo:
         photo.write(photo_request.content)
 
-    # event_data = get_events(query)
-    # print event_data
+    
 
     return '<img src='+ photo_name + '>'
 
@@ -113,17 +112,7 @@ def move():
     return render_template('weather.html', name=name,  temperature=temperature, weather=weather, )
 
 
-#when we put a /X in our url, we get hello X displayed on the page. that X is stored as a
-#variable called name.
-# now for ANYTHING other than london it return's the below
-#@app.route("/profile/<name>")
-#def profile(name):
-    #r
 
-
-    #render_template("chocs.html", city=chocs.title())#this will give back the name entered capitalised
-
-#if the search for localhost5000/ANYTHING(hence the other)
 @app.route('/<badpage>')
 def bad(badpage):
     return "<h2>Hey there it looks like you searched for the wrong thing</h2>"
