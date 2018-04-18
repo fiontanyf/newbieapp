@@ -12,19 +12,15 @@ html, body {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
-=======
 .container-fluid a {
 	text-decoration: none;
-	color: black;
+	color: black;  
 }
 
 .container-fluid a:hover {
   text-decoration: none;
   color: inherit;
 }
-
->>>>>>> b67be4100e3fd72eb221676559a36ca319927568
 
 
 /* padded section */
@@ -50,10 +46,7 @@ html, body {
   text-align: center;
   font-family: Montserrat;
   padding: 20px;
-<<<<<<< HEAD
-=======
   margin-top: 10px;
->>>>>>> b67be4100e3fd72eb221676559a36ca319927568
 }
 
 #home {
@@ -72,14 +65,11 @@ html, body {
 #about {
 }
 
-<<<<<<< HEAD
-=======
 .container a {
   text-decoration: none;
   color: inherit;
 }
 
->>>>>>> b67be4100e3fd72eb221676559a36ca319927568
 #services {
   background-color: #306d9f;
   color: #ffffff;
