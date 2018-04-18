@@ -9,13 +9,19 @@ html, body {
   text-align: center;
   padding-bottom: 10px;
   font-family: Montserrat;
+  text-decoration: none;
 }
 
 <<<<<<< HEAD
 =======
 .container-fluid a {
 	text-decoration: none;
-	color: inherit;
+	color: black;
+}
+
+.container-fluid a:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 >>>>>>> b67be4100e3fd72eb221676559a36ca319927568
