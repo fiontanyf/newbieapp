@@ -33,9 +33,9 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-
   <!-- location search -->
   <div id="home" class="home">
+      <form method="post" action="/weather">
       <div class="text-vcenter">
 
 
@@ -60,7 +60,7 @@
       <div>
 
         <p class="lead">Where are you in the world?</p>
-        <input type="text" id="query" required="required" placeholder="Type a country or city--" onkeyup="nospaces(this)">
+        <input type="text" id="query" name="query" required="required" placeholder="Type a country or city--" onkeyup="nospaces(this)">
         <button id="search">Show location</button>
 
       </div>
@@ -70,11 +70,9 @@
 
 <!--weather button  -->
       <div>
-             <form method="post" action="/weather">
-
               <input type="submit" value="Check weather" id="submitbutton">
 
-             </form>
+             
            </div>
 <!-- weather end -->
 
@@ -87,9 +85,8 @@
 
 
     </div>
+    </form>
   </div>
-
-
 
 
   <!-- /location end -->

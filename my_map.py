@@ -92,9 +92,10 @@ def name():
 # weather section
 @app.route("/weather" , methods=["POST"])
 def move():
-    form_data = request.form
+    form_data = request.form 
+    print form_data
     endpoint = "http://api.openweathermap.org/data/2.5/weather"
-    payload = {"q": "London,UK", "units":"metric", "appid":"7c342186dbca07aef649cd07af2b77f1"}
+    payload = {"q": form_data ["query"], "units":"metric", "appid":"7c342186dbca07aef649cd07af2b77f1"}
 
     response = requests.get(endpoint, params=payload)
     data = response.json()
